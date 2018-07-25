@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Personal Website</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700|Amatic+SC:700" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+<div id="landing" class="landing">
+<div class="landing_bg">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-sm navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Mathew Ly</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbarSupportedContent" class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li><a class="nav-link nav_underline" href="#about">About</a></li>
+        <li><a class="nav-link nav_underline" href="#portfolio">Portfolio</a></li>
+        <li><a class="nav-link nav_underline" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Content -->
+<div class="container-fluid">
+  <div class="container">
+    <!-- Landing -->
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="content">
+          <div class="header">
+            <p>When life gives you</p> 
+            <p id="lemons" class="floating">&lt;lemons&gt;</p>
+            <br>
+            <p id="make"> make websites.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<i class="fas fa-angle-down floating"></i>
+</div>
+</div>
+<div class="container-fluid about_bg" id="about">
+  <div class="container"><img src="images/photo.png"></div>
+  <div class="container about">
+    <div class="about_box"></div>
+    <!-- About -->  
+    <div class="row">
+      <div class="col-lg-5">
+      </div>
+      <div class="col-lg-7">
+        <p class="title title_underline" id="about_top">About Me</p>
+        <p class="words"><span id="hey">Hey! I’m Mathew Ly,<br> </span> <span id="dev">a graduate web developer & designer from Sydney.</span><br><br> Since forever I’ve been obsessed with technology, leading me to study Information Technology at university where I discovered my passion for web development. I’m a creative person and I’ve always been passionate about art, naturally causing me to take an interest in graphic design. Above all, I have an insatiable hunger to learn, I love learning and am trying new things.<br><br> Besides that, my hobbies are weight lifting, playing soccer and jamming on the guitar.</p>
+      </div>
+    </div>
+    <!-- Skills -->
+    <div class="row">
+      <div class="col-lg-5">
+      </div>
+      <div class="col-lg-7">
+        <p class="title title_underline">Skills</p>
+        <div class="skills">
+        <div>
+        <p>Front-end</p>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Bootstrap</li>
+          <li>jQuery</li>
+          <li>Angular</li>
+        </ul>
+        </div>
+        <div>
+        <p>Back-end</p>
+        <ul>
+          <li>Node.js</li>
+          <li>Express.js</li>
+          <li>MongoDB</li>
+        </ul>
+        </div>
+        <div>
+        <p>Design</p>
+        <ul>
+          <li>Photoshop</li>
+          <li>Illustrator</li>
+        </ul>
+        </div>
+        <div>
+        <p>Tools</p>
+        <ul>
+          <li>GitHub</li>
+        </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
+
+<!-- Portfolio -->
+<div class="container portfolio" id="portfolio">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="portfolio_head">
+        <p class="title">Portfolio</p>
+        <p id="view"><a href="#">view all</a></p>
+      </div>
+    </div>
+    <div class="col-lg-4 square">
+      <div class="placeholder one">
+        <div class="overlay" data-text="Illustrator">
+        </div>
+      </div>
+      <div class="portfolio_desc">
+        <h2>Title</h2>
+        <p>Here is a description.</p>
+      </div>
+    </div>
+    <div class="col-lg-4 square"><div class="placeholder"></div></div>
+    <div class="col-lg-4 square"><div class="placeholder"></div></div>
+  </div>                                           
+</div>
+
+<!-- Contact -->
+<div class="container-fluid contact_bg" id="contact">
+  <div class="container contact">
+    <div class="row">
+      <div class="col-lg-8">
+      <p class="title title_underline">Contact</p>
+      
+      <form>
+        <div class="row">
+          <div class="col">
+            <label class="sr-only" for="name">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Name">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label class="sr-only" for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Email">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label class="sr-only" for="message">Message</label>
+            <textarea class="form-control" id="message" placeholder="Message" rows="3"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <button type="submit" class="btn btn-light">Send</button>
+        </div>
+      </form>
+      </div>
+      
+      <div class="col-lg-4">
+      <div class="social">
+        <p class="title title_underline">Social</p>
+        <p><a href="mailto:matheww96@gmail.com">matheww96@gmail.com</a> <i class="fas fa-at"></i></p>
+        <p><a href="#">Facebook</a> <i class="fab fa-facebook-square"></i></i></p>
+        <p><a href="#">LinkedIn</a> <i class="fab fa-linkedin"></i></p>
+        <p><a href="#">GitHub</a> <i class="fab fa-github-square"></i></i></p>
+      </div>
+      </div>
+    </div>
+  </div>  
+</div>
+<!-- <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>   -->
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+
+<script>
+$("#lemons").click(function(){
+  $("#lemons").css('cursor', 'text');
+  $("#make").fadeIn(1000);
+  
+  $("#lemons").one('animationiteration', function() {
+      $(this).removeClass("floating");
+  });
+  $('.landing').css({
+    'background': 'url(images/lemonade.jpg)',
+    'background-size': 'cover',
+    'background-position': 'center'
+  });
+  $('.fa-angle-down').fadeIn(1000);
+});
+
+$(".fa-angle-down").click(function() {
+  $('html, body').animate({
+    scrollTop: $("#about").offset().top }, 'slow');
+});
+</script>
+</body>
+</html>
