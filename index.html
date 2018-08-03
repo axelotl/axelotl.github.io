@@ -15,7 +15,7 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-sm navbar-dark">
   <div class="container">
-    <a class="navbar-brand" href="#">Mathew Ly</a>
+    <a class="navbar-brand" href="#"><img class="logo" src="images/ML.png"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -61,7 +61,7 @@
       </div>
       <div class="col-lg-7">
         <p class="title title_underline" id="about_top">About Me</p>
-        <p class="words"><span id="hey">Hey! I’m Mathew Ly,<br> </span> <span id="dev">a graduate web developer & designer from Sydney.</span><br><br> Since forever I’ve been obsessed with technology, leading me to study Information Technology at university where I discovered my passion for web development. I’m a creative person and I’ve always been passionate about art, naturally causing me to take an interest in graphic design. Above all, I have an insatiable hunger to learn, I love learning and am trying new things.<br><br> Besides that, my hobbies are weight lifting, playing soccer and jamming on the guitar.</p>
+        <p class="words"><span id="hey">Hey! I’m Mathew Ly,<br> </span> <span id="dev">a graduate front-end web developer from Sydney.</span><br><br> I’ve been passionate about technology for as long as I can remember, this drove me to study Information Technology at university where I discovered my new passion for web development. At the same time, I’m a creative person with strong interest in design, so naturally I started to favour front-end development. However, this is only the beginning of my journey to become a full-stack developer. Above all, I have an insatiable hunger to learn, I love learning and trying out new things.<br><br> My main hobbies are weight lifting, playing and watching soccer, and jamming on the guitar.</p>
       </div>
     </div>
     <!-- Skills -->
@@ -140,23 +140,23 @@
       <div class="col-lg-8">
       <p class="title title_underline">Contact</p>
       
-      <form>
+      <form action="https://formspree.io/matheww96@gmail.com" method="POST">
         <div class="row">
           <div class="col">
             <label class="sr-only" for="name">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Name">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Name" data-error="Enter your name!" required>
           </div>
         </div>
         <div class="row">
           <div class="col">
             <label class="sr-only" for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Email">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email" data-error="Enter your email!" required>
           </div>
         </div>
         <div class="row">
           <div class="col">
             <label class="sr-only" for="message">Message</label>
-            <textarea class="form-control" id="message" placeholder="Message" rows="3"></textarea>
+            <textarea class="form-control" id="message" name="message" placeholder="Message" rows="3" data-error="Enter your message!" required></textarea>
           </div>
         </div>
         <div class="row">
@@ -169,15 +169,19 @@
       <div class="social">
         <p class="title title_underline">Social</p>
         <p><a href="mailto:matheww96@gmail.com">matheww96@gmail.com</a> <i class="fas fa-at"></i></p>
-        <p><a href="#">Facebook</a> <i class="fab fa-facebook-square"></i></i></p>
-        <p><a href="#">LinkedIn</a> <i class="fab fa-linkedin"></i></p>
-        <p><a href="#">GitHub</a> <i class="fab fa-github-square"></i></i></p>
+        <p><a href="https://www.linkedin.com/in/mathew-ly-a9311016a/">LinkedIn</a> <i class="fab fa-linkedin"></i></p>
+        <p><a href="https://github.com/axelotl">GitHub</a> <i class="fab fa-github-square"></i></i></p>
       </div>
       </div>
     </div>
-  </div>  
+	<div class="row">
+	  <div class="col-lg-12 credit">
+	    <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+	  </div>
+	</div>
+  </div>
 </div>
-<!-- <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>   -->
+
 
 <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -191,7 +195,7 @@ lemonade.src = 'images/lemonade.jpg';
 
 $("#lemons").click(function(){
   $("#lemons").css('cursor', 'text');
-  $("#make").fadeIn(1000);
+  $("#make").css('visibility', 'visible').animate({opacity: 1.0}, 1000);
   
   $("#lemons").one('animationiteration', function() {
       $(this).removeClass("floating");
@@ -201,7 +205,7 @@ $("#lemons").click(function(){
     'background-size': 'cover',
     'background-position': 'center'
   });
-  $('.fa-angle-down').fadeIn(1000);
+  $('.fa-angle-down').css('visibility', 'visible').animate({opacity: 1.0}, 1000);
 });
 
 $(".fa-angle-down").click(function() {
