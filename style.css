@@ -100,7 +100,7 @@ nav button {
   -webkit-transition: background 1s linear;
   -moz-transition: background 1s linear;
   background-size: cover;
-  background-position: top;
+  background-position: center;
 }
 
 .content {
