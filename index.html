@@ -61,7 +61,7 @@
       </div>
       <div class="col-lg-7">
         <p class="title title_underline" id="about_top">About Me</p>
-        <p class="words"><span id="hey">Hey! I’m Mathew Ly,<br> </span> <span id="dev">a graduate front-end web developer from Sydney.</span><br><br> I’ve been passionate about technology for as long as I can remember, this drove me to study Information Technology at university where I discovered my new passion for web development. At the same time, I’m a creative person with strong interest in design, so naturally I started to favour front-end development. However, this is only the beginning of my journey to become a full-stack developer. Above all, I have an insatiable hunger to learn, I love learning and trying out new things.<br><br> My main hobbies are weight lifting, playing and watching soccer, and jamming on the guitar.</p>
+        <p class="words"><span id="hey">Hey! I’m Mathew Ly,<br> </span> <span id="dev">a graduate front-end web developer from Sydney.</span><br><br> I’ve been passionate about technology for as long as I can remember, this drove me to study Information Technology at university where I discovered my new passion for web development. At the same time, I’m a creative person with strong interest in design, so naturally I started to favour front-end development. However, this is only the beginning of my journey to become a full-stack developer. Above all, I have an insatiable hunger to learn, and try out new things.<br><br> My main hobbies are weight lifting, playing and watching soccer, and jamming on the guitar.</p>
       </div>
     </div>
     <!-- Skills -->
@@ -101,7 +101,7 @@
         <p>Tools</p>
         <ul>
           <li>Git + GitHub</li>
-		  <li>Linux Terminal</li>
+		  <li>Linux terminal</li>
         </ul>
         </div>
         </div>
@@ -190,7 +190,9 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 
 <script>
-// Preload hover background image
+// Preload background images
+var lemons = new Image();
+lemons.src = 'images/lemons.jpg';
 var lemonade = new Image();
 lemonade.src = 'images/lemonade.jpg';
 
@@ -201,11 +203,7 @@ $("#lemons").click(function(){
   $("#lemons").one('animationiteration', function() {
       $(this).removeClass("floating");
   });
-  $('.landing').css({
-    'background': 'url(images/lemonade.jpg)',
-    'background-size': 'cover',
-    'background-position': 'center bottom'
-  });
+	$("#landing").toggleClass("landingClick");
   $('.fa-angle-down').css('visibility', 'visible').animate({opacity: 1.0}, 1000);
 });
 

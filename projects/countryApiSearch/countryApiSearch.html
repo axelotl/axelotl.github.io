@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>APIs</title>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Country search -->
+<div id="results">
+	<div id="searchBar">
+	<input type="text" placeholder="Enter a country name or keyword...">
+	<button>Search</button>
+	</div>
+	<div id="searches"></div>
+	<div id="countryInfo">
+	<h1 id="country"></h1>
+	<table>
+		<tr>
+			<td id="flag" colspan="2"></td>
+		</tr>
+		<tr>
+			<td id="translate" colspan="2"></td>
+		</tr>
+		<tr>
+			<td>Continent</td>
+			<td id="continent"></td>
+		</tr>
+		<tr>
+			<td>Language(s)</td>
+			<td>
+				<ul id="language">
+				</ul>
+			</td>
+			<tr>
+				<td>Currency</td>
+				<td id="currency"></td>
+			</tr>
+			<tr>
+				<td>Population</td>
+				<td id="population"></td>
+			</tr>
+		</tr>
+	</table>
+	</div>
+	<div id="snapshot">
+		<h2>Capital City Snapshot</h2>
+		<div id="capitalImage"></div>
+		<p id="capital"></p>
+		<p id="time"></p>
+		<p id="date"></p>
+		<p id="weather"></p>
+	</div>
+</div>
+<div id="map"></div>
+<script src="countryApiSearch.js"></script>
+<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1vZEZvTD_HUfJn3x18gyXuhl8_yRPGPY">
+    </script>
+</body>
+</html>
