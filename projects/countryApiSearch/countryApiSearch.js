@@ -144,7 +144,7 @@ async function translate(target) {
 }
 
 // Search "openweathermap API" for weather info of the capital city
-let weatherUrl = "http://api.openweathermap.org/data/2.5/weather?appid=a9c4f224d14992d91073b28de4998fc3&q=";
+let weatherUrl = "https://api.openweathermap.org/data/2.5/weather?appid=a9c4f224d14992d91073b28de4998fc3&q=";
 
 async function weather(city, fallback) {
 	try {
