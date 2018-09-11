@@ -33,12 +33,19 @@ body, html {
 	width: 100%;
 	min-height: 50px;
 	display: flex;
+  box-shadow: 0px 0px 5px 5px #888;
+	-webkit-box-shadow: 0px 0px 5px 0px #888;
+	background: white;
+	z-index: 1;
 }
 input {
 	width: 75%;
 	padding-left: 5%;
 	padding-top: 0;
 	padding-bottom: 0;
+	border: 0;
+	font-family: 'Noto Serif JP', sans-serif;
+	outline: none;
 }
 button {
 	width: 20%;
@@ -46,16 +53,29 @@ button {
 	padding-bottom: 0;
 	height: 50px;
 	cursor: pointer;
-	background: #F4F4F4;
-}
-input, button {
+	background: #efefef;
 	border: 0;
-	outline: none;
-	font-family: 'Noto Serif JP', sans-serif;
+	border-left: 1px solid rgba(0,0,0,0.1);
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+button:hover {
+	background: #e8e8e8;
 }
 #searches {
 	width: 100%;
 	margin-top: 5px;
+}
+#searches h1 {
+	font-family: 'Noto Serif JP', sans-serif;
+	color: #909090;
+	position: absolute;
+	top: 50%;
+	width: 384px;
+	transform: translateY(-50%);
+}
+#searches img {
+	padding-top: 16px;
 }
 #searches li:nth-child(2n+0) {
 	background: #FEF9E7;
@@ -88,6 +108,7 @@ table {
 	padding-bottom: 15px;
 	border-spacing: 0;
 	width: 100%;
+	table-layout: fixed;
 }
 td:first-child {
 	font-weight: 700;

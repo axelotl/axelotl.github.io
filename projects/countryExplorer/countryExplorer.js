@@ -81,8 +81,8 @@ async function getData() {
 				document.querySelector("h2").style.display = "block";
 				document.querySelector("table").style.display = "table";
 				// Other API functions
-				initMap(result.name);
-				translate(result.languages[0].iso639_1);
+				findMap(result.name);
+				translate(result.languages);
 				weather(result.capital, result.name);
 			}
 			return jsonResponse;
@@ -112,11 +112,16 @@ async function imageSearch(city) {
 // Search "Google Maps API" for country location and fit to container
 let geocoder;
 let map;
+function initMap() {
+map = new google.maps.Map(document.getElementById('map'), {
+						center: {lat: 0, lng: 0},
+						zoom: 2
+					});
+}
 
-function initMap(address) {
+function findMap(address) {
 	map = new google.maps.Map(document.getElementById('map'));
 	geocoder = new google.maps.Geocoder();
-    map = new google.maps.Map(document.getElementById('map'));
 	
 	geocoder.geocode( { 'address': address}, function(results, status) {
 		if (status == google.maps.GeocoderStatus.OK) {
@@ -128,23 +133,62 @@ function initMap(address) {
 
 // Use "Google Translate API" to translate greeting to the language of the country
 let translateUrl = "https://translation.googleapis.com/language/translate/v2?key=" + apikey;
+let translations = [];
 
 async function translate(target) {
+	// Choose another language by default if English is the first option
+	let i = 0;
+	let languages = [];
+	if (target.length > 1 && target[0].iso639_1 === "en") {
+		i++;
+	}
+	// Save all languages into an array
+	for (let i = 0;i < target.length;i++) {
+		languages[i] = target[i].iso639_1;
+	}
 	try {
-		let response = await fetch(translateUrl + "&q=Hello World! How are you?&target=" + target);
-		if (response.ok) {
-			let jsonResponse = await response.json();
-			document.querySelector("#translate").innerHTML = jsonResponse.data.translations[0].translatedText;
+		// Fetch for all languages
+		let response = [];
+		for (let i = 0;i < languages.length;i++) {
+			response[i] = await fetch(translateUrl + "&q=Hello World! How are you?&target=" + target[i].iso639_1);
+		}
+		if (response[0].ok) {
+			let jsonResponse = [];
+			let available = document.querySelectorAll("#language li");
+			for (let i = 0;i < response.length;i++) {
+				jsonResponse[i] = await response[i].json();
+				// Save all translations to an array
+				translations[i] = jsonResponse[i].data.translations[0].translatedText;
+				available[i].style.cursor = "pointer";
+			}
+			document.querySelector("#translate").innerHTML = translations[i];
+			available[i].style.fontWeight = "700";
 			return jsonResponse;
 		} throw new Error('Request failed!')
 	} catch(error) {
 			console.log(error);
-			document.querySelector("#translate").innerHTML = "Language translation not found!";
+			if (translations) {
+				document.querySelector("#translate").innerHTML = translations[i];
+			} else {
+				document.querySelector("#translate").innerHTML = "Language translation not found!";
+			}
 		}
 }
 
+// Click to choose language translation
+document.querySelector("#language").addEventListener('click', function (event) {
+  if (event.target.matches('li') && event.target.style.cursor == "pointer" ) {
+		document.querySelector("#translate").innerHTML = translations[event.target.id];
+		let available = document.querySelectorAll("#language li");
+		for (let i = 0;i < available.length;i++) {
+			available[i].style.fontWeight = "400";
+		}
+		event.target.style.fontWeight = "700";
+  }
+})
+
 // Search "openweathermap API" for weather info of the capital city
-let weatherUrl = "https://api.openweathermap.org/data/2.5/weather?appid=a9c4f224d14992d91073b28de4998fc3&q=";
+let weatherUrl = "http://api.openweathermap.org/data/2.5/weather?appid=a9c4f224d14992d91073b28de4998fc3&q=";
 
 async function weather(city, fallback) {
 	try {
@@ -197,7 +241,7 @@ async function time(latlng) {
 function languages(lan) {
 	let lanStr = "";
 	for (let i = 0;i < lan.length;i++) {
-		lanStr += "<li>" + lan[i].name + "</li>";
+		lanStr += "<li id=" + i + ">" + lan[i].name + "</li>";
 	}
 	return lanStr;
 }
