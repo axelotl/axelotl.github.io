@@ -4,6 +4,7 @@ let apikey = "AIzaSyA1vZEZvTD_HUfJn3x18gyXuhl8_yRPGPY";
 
 // Click button to search
 searchButton.addEventListener("click", function() {
+	document.querySelector("#content").style.justifyContent = "flex-start";
 	if (input.value.length > 2) {
 		query = url + input.value;
 		clear();
@@ -162,7 +163,7 @@ async function translate(target) {
 				if (jsonResponse[i].data) {
 					translations[i] = jsonResponse[i].data.translations[0].translatedText;
 					available[i].style.cursor = "pointer";
-					if (t === null && target[i].iso639_1 != "en" || target.length === 1) {
+					if (t === null) {
 						t = i;
 					}
 				} else {
