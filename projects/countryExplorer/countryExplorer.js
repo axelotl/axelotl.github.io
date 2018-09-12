@@ -162,7 +162,7 @@ async function translate(target) {
 				if (jsonResponse[i].data) {
 					translations[i] = jsonResponse[i].data.translations[0].translatedText;
 					available[i].style.cursor = "pointer";
-					if (t === null) {
+					if (t === null && target[i].iso639_1 != "en" || target.length === 1) {
 						t = i;
 					}
 				} else {
