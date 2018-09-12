@@ -50,11 +50,14 @@ function clear() {
 	document.querySelector("#time").innerHTML = "";
 	document.querySelector("#date").innerHTML = "";
 	document.querySelector("#weather").innerHTML = "";
+	
+	translations = [];
 }
 
 // Initial query to "restcountries" api and execute other functions
 const url = "https://restcountries.eu/rest/v2/name/";
 let query = "";
+let available;
 
 async function getData() {
 	clear();
@@ -72,6 +75,7 @@ async function getData() {
 				continent.innerHTML = result.region;
 				capital.innerHTML = result.capital;
 				language.innerHTML = languages(result.languages);
+				available = document.querySelectorAll("#language li");
 				currency.innerHTML = `${result.currencies[0].name} (${result.currencies[0].symbol} ${result.currencies[0].code})`;
 				population.innerHTML = numberCommas(result.population);
 				flag.innerHTML = `<img src="${result.flag}" alt="${result.demonym} flag" title="${result.demonym} flag">`;
@@ -137,11 +141,8 @@ let translations = [];
 
 async function translate(target) {
 	// Choose another language by default if English is the first option
-	let i = 0;
+	let t = null;
 	let languages = [];
-	if (target.length > 1 && target[0].iso639_1 === "en") {
-		i++;
-	}
 	// Save all languages into an array
 	for (let i = 0;i < target.length;i++) {
 		languages[i] = target[i].iso639_1;
@@ -152,23 +153,31 @@ async function translate(target) {
 		for (let i = 0;i < languages.length;i++) {
 			response[i] = await fetch(translateUrl + "&q=Hello World! How are you?&target=" + target[i].iso639_1);
 		}
-		if (response[0].ok) {
+		if (response[0].ok || response[1].ok) {
 			let jsonResponse = [];
 			let available = document.querySelectorAll("#language li");
 			for (let i = 0;i < response.length;i++) {
 				jsonResponse[i] = await response[i].json();
 				// Save all translations to an array
-				translations[i] = jsonResponse[i].data.translations[0].translatedText;
-				available[i].style.cursor = "pointer";
+				if (jsonResponse[i].data) {
+					translations[i] = jsonResponse[i].data.translations[0].translatedText;
+					available[i].style.cursor = "pointer";
+					if (t === null) {
+						t = i;
+					}
+				} else {
+					translations[i] = "Language translation not found!";
+				}
 			}
-			document.querySelector("#translate").innerHTML = translations[i];
-			available[i].style.fontWeight = "700";
+			document.querySelector("#translate").innerHTML = translations[t];
+			available[t].style.fontWeight = "700";
 			return jsonResponse;
 		} throw new Error('Request failed!')
 	} catch(error) {
 			console.log(error);
-			if (translations) {
-				document.querySelector("#translate").innerHTML = translations[i];
+			if (translations[t] != null) {
+				document.querySelector("#translate").innerHTML = translations[t];
+				available[t].style.fontWeight = "700";
 			} else {
 				document.querySelector("#translate").innerHTML = "Language translation not found!";
 			}
@@ -179,7 +188,6 @@ async function translate(target) {
 document.querySelector("#language").addEventListener('click', function (event) {
   if (event.target.matches('li') && event.target.style.cursor == "pointer" ) {
 		document.querySelector("#translate").innerHTML = translations[event.target.id];
-		let available = document.querySelectorAll("#language li");
 		for (let i = 0;i < available.length;i++) {
 			available[i].style.fontWeight = "400";
 		}
