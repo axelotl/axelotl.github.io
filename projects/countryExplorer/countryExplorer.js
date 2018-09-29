@@ -163,6 +163,7 @@ async function translate(target) {
 				if (jsonResponse[i].data) {
 					translations[i] = jsonResponse[i].data.translations[0].translatedText;
 					available[i].style.cursor = "pointer";
+					available[i].classList.add("link");
 					if (t === null) {
 						t = i;
 					}
@@ -205,8 +206,8 @@ async function weather(city, fallback) {
 		if (response.ok) {
 			let jsonResponse = await response.json();
 			imageSearch(city);
-			document.querySelector("#weather").innerHTML = Math.round(jsonResponse.main.temp - 273.15) + "°C";
-			document.querySelector("#weather").innerHTML += " - " + jsonResponse.weather[0].description.charAt(0).toUpperCase() + jsonResponse.weather[0].description.substr(1);
+			document.querySelector("#temp").innerHTML = Math.round(jsonResponse.main.temp - 273.15) + "°C";
+			document.querySelector("#weather").innerHTML = jsonResponse.weather[0].description.charAt(0).toUpperCase() + jsonResponse.weather[0].description.substr(1);
 			let latlng = jsonResponse.coord.lat + ", " + jsonResponse.coord.lon;
 			time(latlng);
 			return jsonResponse;
