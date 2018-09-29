@@ -148,8 +148,10 @@ ul {
 	padding-bottom: 15px;
 	flex-grow: 1;
 }
-h2 {
+#snapshot h2 {
 	text-align: center;
+	margin: 0;
+	padding: 20px;
 }
 #snapshot img {
 	width: 100%;
@@ -161,17 +163,26 @@ p {
 }
 #capital {
 	font-weight: 700;
-	font-size: 2rem;
-	margin-top: 15px;
+	font-size: 1.75rem;
+	padding-top: 15px;
 }
 #time {
 	margin-top: 10px;
 	line-height: 1.75rem;
 	font-size: 2rem;
+	font-weight: 700;
 }
 #date {
 	margin-bottom: 10px;
+	font-weight: 300;
+}
+#temp {
+	font-size: 1.75rem;
 }
 #weather {
-	font-weight: 700;
+	font-weight: 300;
+	line-height: 0.75rem;
+}
+.link {
+	color: #0663d6;
 }
