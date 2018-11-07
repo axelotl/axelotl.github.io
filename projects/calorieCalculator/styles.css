@@ -291,4 +291,8 @@ input[type=radio]:checked ~ label {
 	.double {
 		grid-template-columns: initial;
 	}
+	#UI, #profile, #results {
+		margin: auto 0;
+		text-align: center;
+	}
 }
