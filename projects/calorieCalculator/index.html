@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Calorie Calculator</title>
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+</head>
+
+<body>
+	<div id="UI">
+		<!-- Name -->
+		<label class="userInput" id="focus">
+			<input class="inputField" type="text" id="name" name="name" autocomplete="off" required>
+			<div class="labelText">What is your name?</div>
+			<i class="arrow"></i>
+		</label>
+		<!-- Age -->
+		<label class="userInput">
+			<input class="inputField" type="number" id="age" name="age" required>
+			<div class="labelText">How old are you?</div>
+			<i class="arrow"></i>
+		</label>
+		<!-- Gender -->
+		<div class="userInput radio">
+			<div class="labelText">Are you male or female?</div>
+			<ul>
+				<li>
+					<input id="male" type="radio" name="gender" value="Male">
+					<label for="male">Male</label>
+					<div class="check"></div>
+				</li>
+				<li>
+					<input id="female" type="radio" name="gender" value="Female">
+					<label for="female">Female</label>
+					<div class="check"></div>
+				</li>
+			</ul>
+			<i class="arrow"></i>
+		</div>
+		<!-- Unit -->
+		<div class="userInput radio">
+			<div class="labelText">Choose your measurement system</div>
+			<ul>
+				<li>
+					<input id="metric" type="radio" name="unit" value="metric">
+					<label for="metric">Metric</label>
+					<div class="check"></div>
+				</li>
+				<li>
+					<input id="imperial" type="radio" name="unit" value="imperial">
+					<label for="imperial">Imperial</label>
+					<div class="check"></div>
+				</li>
+			</ul>
+			<i class="arrow"></i>
+		</div>
+		<!-- Height -->
+		<label class="userInput">
+			<div id="metricHeight">
+				<input class="inputField" type="number" name="cm" required>cm
+				<div class="labelText">How tall are you?</div>
+				<i class="arrow"></i>
+			</div>
+			<!-- Imperial -->
+			<div id="imperialHeight">
+				<input class="inputField" type="number" name="feet" required>ft
+				<input class="inputField" type="number" name="inch" required>in
+				<div id="imperialText" class="labelText">How tall are you?</div>
+				<i class="arrow"></i>
+			</div>
+		</label>
+		<!-- Weight -->
+		<label class="userInput">
+			<input class="inputField" type="number" id="weight" name="weight" required>
+			<div class="labelText">How much do you weigh?</div>
+			<p id="weightUnit">kg</p>
+			<i class="arrow"></i>
+		</label>
+		<!-- Activity level -->
+		<div class="userInput custom-select" style="width:500px;">
+			<select id="drop">
+				<option>Activity level</option>
+				<option value="1">BMR</option>
+				<option value="1.2">Sedentary</option>
+				<option value="1.375">Lightly active</option>
+				<option value="1.55">Moderately active</option>
+				<option value="1.725">Very active</option>
+				<option value="1.9">Super active</option>
+			</select>
+			<i class="arrow"></i>
+		</div>
+	</div>
+	<div id="profile">
+		<h2>Profile</h2>
+		<p><span>Name:</span> </p>
+		<p><span>Gender:</span> </p>
+		<p><span>Age:</span> </p>
+		<p><span>Weight:</span> </p>
+		<p><span>Height:</span> </p>
+		<p><span>Activity level:</span> </p>
+	</div>
+	<div id="results">
+		<h2>Results</h2>
+		<p></p>
+		<div>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+	</div>
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+	<script src="calorieCalculator.js"></script>
+	<script src="dropdown.js"></script>
+</body>
+</html>
