@@ -207,7 +207,7 @@ lemons.src = 'images/lemons.jpg';
 var lemonade = new Image();
 lemonade.src = 'images/lemonade.jpg';
 
-$("#lemons").click(function(){
+$("#lemons").one("click", function(){
   $("#lemons").css('cursor', 'text');
   $("#make").css('visibility', 'visible').animate({opacity: 1.0}, 1000);
   
