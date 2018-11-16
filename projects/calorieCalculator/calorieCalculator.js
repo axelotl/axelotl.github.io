@@ -1,3 +1,5 @@
+$("#UI").fadeIn("slow");
+
 // Calorie Calculation
 let name, gender, unit, weight, height, age, activity, result;
 let heightImperial = [];
@@ -68,9 +70,7 @@ let next = (e, clicked) => {
 		focus++;
 		$("#UI").hide();
 		calculate();
-		$("#results").show();
-		$("#profile").show();
-		$("body").toggleClass("double");
+		$("#end").toggleClass("double");
 		results();
 	}
 }
@@ -112,6 +112,10 @@ let results = () => {
 	$("#results div p:nth-of-type(2)").html(`<span>${result - 100}</span> to lose 1kg per week`);
 	$("#results div p:nth-of-type(3)").html(`<span>${result + 500}</span> to gain 0.5kg per week`);
 	$("#results div p:nth-of-type(4)").html(`<span>${result + 1000}</span> to gain 1kg per week`);
+	
+	$("#end").css("display", "grid");
+	$("#results").fadeIn("fast");
+	$("#profile").fadeIn("fast");
 }
 
 // Simple functions
