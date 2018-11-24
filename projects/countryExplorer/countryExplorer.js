@@ -56,14 +56,14 @@ function clear() {
 }
 
 // Initial query to "restcountries" api and execute other functions
-const url = "https://restcountries.eu/rest/v2/name/123";
+const url = "https://restcountries.eu/rest/v2/name/";
 let query = "";
 let available;
 
 async function getData() {
 	clear();
 	try {
-		let response = await fetch(url);
+		let response = await fetch(query);
 		if (response.ok) {
 			let jsonResponse = await response.json();
 			// If query returns more than one country
