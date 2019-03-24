@@ -87,7 +87,7 @@ let clearInputs = (inputs) => {
             theirs.innerText = 20;
             freq.selectedIndex = 0;
             payForm.classList.add('hide');
-            success.classList.remove('hide');
+            success.classList.remove('hideSuccess');
             successContainer.classList.add('z');
         }
     }
@@ -167,7 +167,7 @@ nameInput.addEventListener('keydown', () => {
 // Update citizens
 if (sessionStorage.getItem('newCitizen')) {
     let citizens = JSON.parse(sessionStorage.getItem('newCitizen'));
-    
+
     for (let i = 0;i < citizens.length / 2;i++) {
         let citizenDiv = document.createElement('div');
         let citizenName = document.createElement('h3');
@@ -329,7 +329,7 @@ function formatDate(input) {
 const close = document.getElementById('close');
 close.addEventListener('click', () => {
     payForm.classList.remove('hide');
-    success.classList.add('hide');
+    success.classList.add('hideSuccess');
     successContainer.classList.remove('z');
     payButton.classList.remove('valid');
 });
