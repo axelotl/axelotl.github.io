@@ -1282,7 +1282,7 @@ td p:last-child {
       border-bottom-left-radius: 10px;
       border-top-left-radius: 10px;
     }
-    .pay_container, .content, .payment, .payment form {
+    .pay_container, .content, .payment, .payment form, .transaction_container {
       border-bottom-right-radius: 10px;
       border-bottom-left-radius: 10px;
     }
