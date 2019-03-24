@@ -327,16 +327,16 @@ nav button {
 }
 
 .portfolio_img {
-  height: 350px;
-	width: 350px;
-	margin-right: 30px;
-	margin-bottom: 15px;
+	max-height: 350px;
+	padding-top: 100%;
+	width: 100%;
 	border: 3px solid rgba(0,0,0,0.1);
   border-radius: 5%;
   background: #e3e3e3;
 	float: left;
   background-size: cover;
 	background-position: center;
+	margin-bottom: 2rem;
 }
 
 .portfolio_desc {
@@ -368,6 +368,10 @@ nav button {
 
 .two {
   background: url(images/screenshot1.png);
+}
+
+.three {
+  background: url(images/screenshot3.png);
 }
 
 .contact {
@@ -506,6 +510,10 @@ nav button {
     display:block;
     width:0;
   }
+	
+	.portfolio_img {
+		margin-bottom: 0;
+	}
   
   .social {
     text-align: right;
