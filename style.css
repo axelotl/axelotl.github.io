@@ -193,9 +193,13 @@ nav button {
   box-shadow: 0px -3px 15px 1px #000;
 }
 
+#photo {
+	width: 100%;
+}
+
 .about {
   position: relative;
-  min-width: 510px;
+  /* min-width: 510px; */
   min-height: 308px;
   padding-bottom: 25px;
 }
@@ -473,6 +477,9 @@ nav button {
 }
 
 @media (min-width: 992px) {
+	#photo {
+		width: initial;
+	}
   .about_bg img {
     position: absolute;
     bottom: 0;
