@@ -645,7 +645,7 @@ i.clicked {
   z-index: 1 !important;
 }
 #success_content {
-  padding: 4rem 0 1.5rem;
+  padding: 5rem 0 1.5rem;
 }
 #success * {
   margin: 0;
